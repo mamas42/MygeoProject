@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>دریافت موقعیت</title>
+</head>
+<body>
+    <button onclick="getLocation()">ارسال موقعیت من</button>
+
+    <script>
+        function getLocation() {
+            navigator.geolocation.getCurrentPosition(
+                function(pos) {
+                    const lat = pos.coords.latitude;
+                    const lng = pos.coords.longitude;
+                    alert(lat + " , " + lng);
+                },
+                function() {
+                    alert("اجازه دسترسی داده نشد");
+                }
+            );
+        }
+    </script>
+</body>
+</html>
